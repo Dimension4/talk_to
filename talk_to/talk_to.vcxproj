@@ -82,7 +82,13 @@
     <ClInclude Include="include\talk_to\containers.hpp" />
     <ClInclude Include="include\talk_to\containers\all_of.hpp" />
     <ClInclude Include="include\talk_to\containers\any_of.hpp" />
+    <ClInclude Include="include\talk_to\expressions\binary_operation.hpp" />
+    <ClInclude Include="include\talk_to\expressions\expression_tag.hpp" />
+    <ClInclude Include="include\talk_to\expressions\expression_tree.hpp" />
+    <ClInclude Include="include\talk_to\expressions\op_codes.hpp" />
     <ClInclude Include="include\talk_to\expressions\value_expression.hpp" />
+    <ClInclude Include="include\talk_to\pretty_output.hpp" />
+    <ClInclude Include="include\talk_to\relations.hpp" />
     <ClInclude Include="include\talk_to\tagged_operand.hpp" />
     <ClInclude Include="include\talk_to\type_traits.hpp" />
     <ClInclude Include="include\talk_to\utility.hpp" />

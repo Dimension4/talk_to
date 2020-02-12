@@ -1,0 +1,14 @@
+1* < 2 < 3 > 4 > 5
+
+<, val, val -> op
+<, op, val -> op
+>, op, val -> con(op, op)
+>, con, val -> con(op, op) 
+
+
+(1 > 10) == (6 > 1 >= 3) != (3 < 3 < 5)  // == and != have lower precedence than < <= > >=
+
+>, val, val -> op   // 1 > 10           ->  (>, 1, 10)
+>, val, val -> op   // 6 > 1            ->  (>, 6, 1)
+>=, op, val -> con  // (>, 6, 1) >= 3   ->  (&&, (>, 6, 1), (>=, 1, 3))
+==, op, con -> op   // (>, 1, 10) == (&&, (>, 6, 1), (>=, 1, 3))  ->  

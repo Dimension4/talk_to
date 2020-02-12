@@ -36,5 +36,23 @@
     <ClInclude Include="include\talk_to\expressions\value_expression.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\expression_tag.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\binary_operation.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\expression_tree.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\relations.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\op_codes.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\pretty_output.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

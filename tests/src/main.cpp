@@ -1,15 +1,25 @@
-﻿#include <talk_to/expressions/value_expression.hpp>
-#include <iostream>
+﻿#include <talk_to/relations.hpp>
+#include <talk_to/pretty_output.hpp>
 
-using namespace tt::expressions;
+#include <iostream>
+#include <string>
+#include <string_view>
+
+std::string remove(std::string str, std::string_view substr)
+{
+    for(auto pos = str.find(substr); pos != std::string::npos; pos = str.find(substr))
+        str.erase(pos, substr.size());
+    return str;
+}
 
 int main()
 {
-    constexpr auto expr = value_expression(1) < 2 < 3 < 2;  // NO, BAD
+    std::cout << std::boolalpha;
+    auto log = [](auto expr) { std::cout << expr << " -> " << static_cast<bool>(expr) << "\n"; };
 
-    static_assert(expr);
+    log(tt::rel(1) < 2 < 3 > 2 > 1);
+    log(tt::rel("aa") < "ab" <= "ab" >= "aa");
 
-    std::cout << typeid(expr).name() << "\n";
 
     return 0;
 }
