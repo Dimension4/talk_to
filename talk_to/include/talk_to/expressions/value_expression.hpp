@@ -20,29 +20,18 @@ namespace tt::expressions
         }
     };
 
-    namespace special_cases
+    template <std::size_t N>
+    constexpr auto to_expr(const char(&value)[N])
     {
-        template <std::size_t N>
-        constexpr auto to_expr(int, const char (&value)[N])
-        {
-            return value_expression(std::string_view(value));
-        }
-
-        template <typename T>
-        constexpr auto to_expr(long, T&& value)
-        {
-            return value_expression(std::forward<T>(value));
-        }
-
-        constexpr auto to_expr(long, expression_tag&& value)
-        {
-            return value;
-        }
+        return value_expression(std::string_view(value));
     }
 
     template <typename T>
     constexpr auto to_expr(T&& value)
     {
-        return special_cases::to_expr(0, std::forward<T>(value));
+        if constexpr (is_expression_v<T>)
+            return std::forward<T>(value);
+        else
+            return value_expression(std::forward<T>(value));
     }
 }
