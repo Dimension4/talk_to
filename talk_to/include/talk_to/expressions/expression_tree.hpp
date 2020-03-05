@@ -4,7 +4,7 @@
 #include <type_traits>
 
 #include "binary_operation.hpp"
-#include "value_expression.hpp"
+#include "constant_value.hpp"
 #include "op_codes.hpp"
 
 namespace tt::expressions
@@ -15,10 +15,10 @@ namespace tt::expressions
         return left_most(expr.lhs);
     }
 
-    template <typename ValType>
-    [[nodiscard]] constexpr decltype(auto) left_most(value_expression<ValType> const& expr)
+    template <typename Expr, typename = std::enable_if_t<is_value_expression_v<Expr>>>
+    [[nodiscard]] constexpr decltype(auto) left_most(Expr&& expr)
     {
-        return expr;
+        return std::forward<Expr>(expr);
     }
 
     template <typename Operator, typename Lhs, typename Rhs>
@@ -27,10 +27,10 @@ namespace tt::expressions
         return right_most(expr.rhs);
     }
 
-    template <typename ValType>
-    [[nodiscard]] constexpr decltype(auto) right_most(value_expression<ValType> const& expr)
+    template <typename Expr, typename = std::enable_if_t<is_value_expression_v<Expr>>>
+    [[nodiscard]] constexpr decltype(auto) right_most(Expr&& expr)
     {
-        return expr;
+        return std::forward<Expr>(expr);
     }
 
     template <typename Operator, typename Lhs, typename Rhs>

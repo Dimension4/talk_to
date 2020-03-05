@@ -17,6 +17,7 @@ namespace tt
     }
 }
 
+// todo: disable overloads for bool to avoid bugs like: 1 < 2 < tt:rel(3)
 
 template <typename Lhs, typename Rhs, typename = tt::enable_relational_operator_t<Lhs, Rhs>>
 [[nodiscard]] constexpr auto operator==(Lhs&& lhs, Rhs&& rhs)

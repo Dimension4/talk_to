@@ -5,12 +5,6 @@
 #include <string>
 #include <string_view>
 
-std::string remove(std::string str, std::string_view substr)
-{
-    for(auto pos = str.find(substr); pos != std::string::npos; pos = str.find(substr))
-        str.erase(pos, substr.size());
-    return str;
-}
 
 int main()
 {

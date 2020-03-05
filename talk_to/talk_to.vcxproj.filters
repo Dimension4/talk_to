@@ -33,12 +33,6 @@
     <ClInclude Include="include\talk_to\utility.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\talk_to\expressions\value_expression.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\talk_to\expressions\expression_tag.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\talk_to\expressions\binary_operation.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -52,6 +46,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\talk_to\pretty_output.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\constant_value.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\expression.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\tagged_tuple_expression.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\tagged_container_expression.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\expression_tags.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\talk_to\expressions\comparison_dispatcher.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

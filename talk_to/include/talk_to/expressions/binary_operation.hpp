@@ -1,12 +1,12 @@
 ﻿#pragma once
 
 #include "../utility.hpp"
-#include "expression_tag.hpp"
+#include "expression.hpp"
 
 namespace tt::expressions
 {
     template <typename Operator, typename Lhs, typename Rhs>
-    struct binary_operation : expression_tag
+    struct binary_operation : expression
     {
         const Lhs lhs;
         const Rhs rhs;

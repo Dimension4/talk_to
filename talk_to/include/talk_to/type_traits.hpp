@@ -30,4 +30,7 @@ namespace tt
 
     template <typename Instantiation, template <typename...> typename Template>
     constexpr bool is_instantiation_of_v = is_instantiation_of<Instantiation, Template>::value;
+
+    template <typename T>
+    using remove_cvref_t = std::remove_reference_t<std::remove_cv_t<T>>;
 }

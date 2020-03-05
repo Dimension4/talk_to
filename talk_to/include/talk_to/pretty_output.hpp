@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "expressions/binary_operation.hpp"
-#include "expressions/value_expression.hpp"
+#include "expressions/constant_value.hpp"
 #include "expressions/op_codes.hpp"
 
 #include <ostream>
@@ -80,7 +80,7 @@ namespace tt::expressions
     }
 
     template <typename ValType>
-    std::ostream& operator<<(std::ostream& os, value_expression<ValType> const& val)
+    std::ostream& operator<<(std::ostream& os, constant_value<ValType> const& val)
     {
         if constexpr (detail::is_string_like_v<ValType>)
             return os << '"' << val.value << '"';
